@@ -1,0 +1,87 @@
+/* Menu item selected (green color & remove blue border) */
+.ant-menu-horizontal > .ant-menu-item-selected {
+  color: #0B7C6B !important;
+  border-bottom: 2px solid #0B7C6B !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item::after {
+  border-bottom: none !important;
+}
+
+.ant-btn {
+  color: #000000 !important;
+  border-color: #D35400 !important;
+  background-color: transparent !important; /* Transparent Background */
+}
+
+/* Login Button Custom Hover Color */
+.ant-btn:hover {
+  color: #FFFFFF !important;
+  border-color: #D35400 !important;
+  background-color: #D35400 !important;
+}
+
+
+/* Input Field Custom Hover Color */
+.ant-input:hover {
+  border-color: #0B7C6B !important;
+}
+
+/* Input Field Focus Color */
+.ant-input:focus, 
+.ant-input-focused {
+  border-color: #0B7C6B !important;
+  box-shadow: 0 0 5px rgba(11, 124, 107, 0.5) !important;
+}
+
+/* Input Label Custom Color */
+.ant-form-item-label > label {
+  color: #0B7C6B !important;
+}
+
+/* Select Dropdown Border Color on Hover */
+.ant-select-dropdown {
+  border-color: #0B7C6B !important;
+  box-shadow: 0 0 5px rgba(11, 124, 107, 0.5) !important;
+}
+
+Select Option Hover Effect
+.ant-select-item-option:hover {
+  background-color: rgba(11, 124, 107, 0.1) !important;
+  border-color: #0B7C6B !important;
+}
+
+/* Select Option When Focused */
+.ant-select-item-option-selected {
+  background-color: rgba(11, 124, 107, 0.2) !important;
+  color: #0B7C6B !important;
+}
+/* Select Field Custom Hover Color */
+.ant-select:hover .ant-select-selector {
+  border-color: #0B7C6B !important;
+  box-shadow: 0 0 5px rgba(11, 124, 107, 0.5) !important;
+}
+
+/* Select Field Focus (When Clicked) */
+.ant-select-focused .ant-select-selector {
+  border-color: #0B7C6B !important;
+  box-shadow: 0 0 5px rgba(11, 124, 107, 0.5) !important;
+}
+
+/* InputNumber Field Custom Hover Color */
+.ant-input-number:hover {
+  border-color: #0B7C6B !important;
+  box-shadow: 0 0 5px rgba(11, 124, 107, 0.5) !important;
+}
+
+/* InputNumber Field Focus (When Clicked) */
+.ant-input-number-focused {
+  border-color: #0B7C6B !important;
+  box-shadow: 0 0 5px rgba(11, 124, 107, 0.5) !important;
+}
+
+/* Select Component-এর Clear Button Remove করা */
+.ant-select-clear {
+  display: none !important;
+}
+
