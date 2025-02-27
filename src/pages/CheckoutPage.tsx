@@ -79,7 +79,7 @@ const CheckoutForm = () => {
           columns={columns}
           dataSource={cartArr.map((item: any) => ({
             key: item.productId,
-            name: item.name,
+            name: item.title,
             quantity: item.quantity,
             price: item.price * item.quantity,
           }))}

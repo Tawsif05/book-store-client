@@ -36,7 +36,7 @@ const CartDrawer = () => {
               />
               <div className="flex-1">
                 <h4 className="text-sm font-medium">{item.title}</h4>
-                <p className="text-gray-600 text-sm mt-2">${item.price}</p>
+                <p className="text-gray-600 text-sm mt-2">৳{item.price}</p>
 
                 <div className="flex items-center gap-2 mt-4">
                   <p className="font-semibold">Quantity:</p>
@@ -72,7 +72,7 @@ const CartDrawer = () => {
                   </Button>
                 </div>
                 <p className="text-sm mt-4 font-semibold">
-                  Total: ${(item.quantity * item.price).toFixed(2)}
+                  Total: ৳{(item.quantity * item.price).toFixed(2)}
                 </p>
               </div>
 
@@ -93,7 +93,7 @@ const CartDrawer = () => {
             </div>
             <div className="flex justify-between mt-2">
               <span className="font-medium">Total Price:</span>
-              <span>${cartData.totalPrice.toFixed(2)}</span>
+              <span>৳{cartData.totalPrice.toFixed(2)}</span>
             </div>
             <Button onClick={handleProceedToCheckout} type="primary" className="mt-4 w-full">
               Proceed to Checkout
