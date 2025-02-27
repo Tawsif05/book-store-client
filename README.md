@@ -1,4 +1,4 @@
-# Book Shop Frontend
+# Book Store Frontend
 
 This is the frontend part of the Book Shop application, built with React. It allows users to browse books, register/login, place orders, and manage their profile. The application is responsive, and provides smooth interactions.
 
@@ -15,7 +15,6 @@ This is the frontend part of the Book Shop application, built with React. It all
 - React
 - Redux (for state management)
 - React Router (for routing)
-- Axios (for API calls)
 - Ant Design (UI library)
 
 ## Installation
