@@ -50,7 +50,7 @@ const CarouselUI = () => {
           {/* Right Side Image */}
           <div style={imageContainer}>
             <img
-              src="../../public/image-removebg-preview.png" 
+              src="/image-removebg-preview.png" 
               alt="Book Sale"
               style={{ width: "400px", height: "250px", objectFit: "cover" }}
             />
@@ -73,7 +73,7 @@ const CarouselUI = () => {
           </div>
           <div style={imageContainer}>
             <img
-              src="../../public/image 1.png"
+              src="/image 1.png"
               alt="Slide 2"
               style={{ width: "500px", height: "250px" }}
             />
@@ -92,7 +92,7 @@ const CarouselUI = () => {
           </div>
           <div style={imageContainer}>
             <img
-              src="../../public/image 2.png"
+              src="/image 2.png"
               alt="Slide 3"
               style={{ width: "500px", height: "250px" }}
             />

@@ -3,11 +3,16 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { logout, useCurrentToken } from "../../redux/features/auth/authSlice";
 import { verifyToken } from "../../utils/verifyToken";
 import { Navigate } from "react-router-dom";
+import { JwtPayload } from "jwt-decode";
 
 type TProtectedRoute = {
   children: ReactNode;
   role: string | undefined;
 };
+
+interface CustomJwtPayload extends JwtPayload {
+  role: string;
+}
 
 const ProtectedRoute = ({ children, role }: TProtectedRoute) => {
   const token = useAppSelector(useCurrentToken);
@@ -15,7 +20,7 @@ const ProtectedRoute = ({ children, role }: TProtectedRoute) => {
   let user;
 
   if (token) {
-    user = verifyToken(token);
+    user = verifyToken(token) as CustomJwtPayload;
   }
 
   const dispatch = useAppDispatch();

@@ -19,11 +19,11 @@ const baseQueryWithRefreshToken: BaseQueryFn<FetchArgs, BaseQueryApi, Definition
   let result = await baseQuery(args, api, extraOptions);
 
   if (result.error?.status === 401) {
-    const res = fetch("https://book-store-server-sigma-beige.vercel.app/api/v1/auth/refresh-token", {
+    const res = await fetch("https://book-store-server-sigma-beige.vercel.app/api/v1/auth/refresh-token", {
       method: "POST",
       credentials: "include",
     });
-    const data = (await res).json();
+    const data = await res.json();
 
     if (data?.data?.accessToken) {
       const user = (api.getState() as RootState).auth.user;

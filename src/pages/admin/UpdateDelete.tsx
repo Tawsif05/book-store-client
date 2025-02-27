@@ -56,7 +56,7 @@ const UpdateDelete = () => {
     {
       title: "Actions",
       key: "actions",
-      render: (text: any, record: any) => (
+      render: (_: any, record: any) => (
         <div className="flex gap-2">
           <Button
             type="primary"

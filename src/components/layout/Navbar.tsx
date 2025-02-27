@@ -5,6 +5,8 @@ import { userPaths } from "../../routes/user.routes";
 import { useAppSelector } from "../../redux/hooks";
 import { selectCurrentUser } from "../../redux/features/auth/authSlice";
 import { useLocation } from "react-router-dom";
+import React,{ ReactElement } from "react";
+import type { MenuProps } from "antd";
 
 const userRole = {
   ADMIN: "admin",
@@ -22,31 +24,35 @@ const Navbar = () => {
       navbarItems = navbarItemsGenerator(adminPaths, userRole.ADMIN);
       break;
     case userRole.USER:
-      navbarItems = navbarItemsGenerator(userPaths.USER, userRole.USER);
+      navbarItems = navbarItemsGenerator(userPaths.USER, userRole.USER); 
       break;
     default:
       navbarItems = navbarItemsGenerator(userPaths.GUEST, userRole.GUEST);
       break;
   }
 
- 
-  const selectedKey = navbarItems.find((item) =>
-    item?.label?.props?.to === location.pathname
-  )?.key;
+  
+  const selectedKey = navbarItems.find((item) => {
+    if (item && React.isValidElement(item.label)) {
+      const labelElement = item.label as ReactElement<{ to: string }>;
+      return labelElement.props.to === location.pathname;
+    }
+    return false;
+  })?.key;
 
   return (
     <>
       <div className="demo-logo" style={{ width: 140, height: 100 }}>
         <img
-          src="../../../public/Book_store_Logo-removebg-preview.png"
+          src="/Book_store_Logo-removebg-preview.png"
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
           alt=""
         />
       </div>
       <Menu
         mode="horizontal"
-        selectedKeys={selectedKey ? [selectedKey] : []} 
-        items={navbarItems}
+        selectedKeys={selectedKey ? [selectedKey] : []}
+        items={navbarItems as MenuProps["items"]}
         style={{
           flex: 1,
           justifyContent: "center",

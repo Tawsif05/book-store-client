@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Table, Spin, Card } from "antd";
 import { useGetMeQuery } from "../redux/features/auth/authApi";
 import { useGetOrdersByUserQuery } from "../redux/features/order/orderApi";
@@ -26,15 +27,15 @@ const OrdersPage = () => {
 
   // Convert products array to object for quick lookup
   const productMap: Record<string, string> = {};
-  productsData?.data?.result?.forEach(product => {
+  productsData?.data?.result?.forEach((product: any) => {
     productMap[product._id] = product.name;
   });
 
   // Format orders for table
-  const formattedOrders = orders?.data?.map(order => ({
+  const formattedOrders = orders?.data?.map((order: any) => ({
     key: order._id,
     orderId: order._id,
-    products: order.products.map(p => productMap[p.productId] || "Unknown Product").join(", "), // ✅ Product Name Instead of ID
+    products: order.products.map((p: any) => productMap[p.productId] || "Unknown Product").join(", "), // ✅ Product Name Instead of ID
     totalPrice: `${order.totalPrice} Taka`,
     status: order.status,
     transactionStatus: order.transaction?.bank_status || "N/A",

@@ -29,7 +29,6 @@ const CheckoutForm = () => {
       totalPrice,
     };
 
-    console.log("✅ Order Data:", orderData); // Debugging
     await createOrder(orderData);
   };
 
